@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvelle Grille - v11 (Moderne)</title>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "trxvbr1f8r");
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f9fafb; /* Fond plus moderne */
+            line-height: 1.6;
+            color: #1f2937;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: 2rem auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+        }
+
+        /* Section Rémunération (partagée) */
+        .remuneration-section {
+            background: white; /* Fond blanc pur */
+            border: 1px solid #e5e7eb; /* Bordure légère */
+            border-radius: 1rem;
+            padding: 1.5rem 2rem; /* Réduit */
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Ombre subtile */
+        }
+
+        .remuneration-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem; /* Réduit */
+            font-weight: 600; /* Allégé */
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem; /* Réduit */
+        }
+
+        /* Grille principale pour les 2 comparateurs */
+        .comparator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 1600px) {
+            .comparator-grid {
+                grid-template-columns: 1fr; 
+                gap: 3rem; 
+            }
+        }
+
+        .comparator-column {
+            background: white;
+            border-radius: 1.5rem; /* Plus arrondi */
+            padding: 1.5rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05); /* Ombre plus douce */
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease-in-out; /* Transition pour le changement de couleur */
+            border-top: 4px solid; /* Bordure supérieure pour le thème */
+        }
+        
+        /* Titre de la colonne (Planning 1 / Planning 2) */
+        .column-title {
+            font-size: 1.6rem; 
+            font-weight: 700;
+            color: #1f2937;
+            text-align: center;
+            margin-bottom: 1rem; 
+            padding-bottom: 0.75rem; 
+            border-bottom: 1px solid #e5e7eb; /* Ligne de séparation plus fine */
+        }
+
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem; /* Plus petit */
+        }
+
+        .form-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db; /* Bordure plus fine */
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background-color: #f9fafb; /* Fond léger */
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* NOUVELLE Grille pour les 2 cartes de stats */
+        .stats-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Planning Card */
+        .planning-card {
+            background: white; /* Fond blanc pur */
+            border-radius: 1rem;
+            padding: 1.25rem; 
+            border: 1px solid #e5e7eb;
+            position: relative;
+            margin-top: 0; 
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03); /* Ombre subtile */
+        }
+        
+        .planning-card-content {
+            flex-grow: 1; 
+        }
+        
+        /* NOUVELLE Ligne pour le salaire */
+        .salary-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 0 0.25rem;
+            margin-bottom: 0.75rem; 
+            flex-wrap: wrap; 
+            gap: 0.5rem;
+        }
+
+        .planning-subtitle {
+            text-align: left;
+            color: #6b7280;
+            font-size: 1rem; /* Taille uniforme */
+            font-weight: 500;
+            margin: 0;
+            display: inline-flex; 
+            align-items: center;
+        }
+
+        .salary-amount {
+            font-size: 1rem; /* Taille uniforme */
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+            text-align: right;
+            flex-shrink: 0; 
+        }
+
+
+        .majorations-details {
+            padding-top: 0.5rem; 
+            font-size: 0.9rem;
+        }
+        
+        #rest-analysis-details-left,
+        #rest-analysis-details-right {
+             border-top: 1px solid #e5e7eb;
+        }
+
+        .majorations-title {
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            color: #374151;
+        }
+
+        .majoration-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            color: #6b7280;
+        }
+
+        .majoration-value {
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        /* Interactive Calendar */
+        .calendar-section {
+            margin-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.5rem;
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap; 
+            gap: 1rem;
+        }
+
+        .calendar-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .hours-display {
+            text-align: right;
+            flex-shrink: 0; 
+        }
+
+        .hours-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+
+        .progress-container {
+            width: 8rem;
+            height: 0.5rem;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            margin-top: 0.25rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #3b82f6;
+            border-radius: 9999px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-bar.over {
+            background-color: #ef4444;
+        }
+
+        .calendar-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .control-group {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 0.75rem; /* Espace réduit */
+        }
+
+        /* --- NOUVEAUX STYLES DE BOUTONS --- */
+        .control-btn {
+            padding: 0.6rem 1.25rem; /* Ajusté */
+            background: #f3f4f6; /* Fond inactif */
+            border: 1px solid transparent; 
+            border-radius: 999px; /* Forme pilule */
+            cursor: pointer;
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            color: #4b5563; /* Couleur inactive */
+            transition: all 0.2s ease-in-out; 
+        }
+
+        .control-btn.active {
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            transform: scale(1.03); 
+        }
+
+        .control-btn:not(.active):hover {
+            background: white;
+            border-color: #d1d5db;
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+            color: #1f2937;
+        }
+
+        /* --- NOUVEAUX THÈMES DE COULEUR --- */
+        
+        /* Thème Bleu (39P) */
+        .theme-blue {
+            background: linear-gradient(135deg, white, #f0f4ff);
+            border-top-color: #3b82f6;
+        }
+        .theme-blue .control-btn.active {
+            background-color: #3b82f6;
+            border-color: #2563eb;
+        }
+
+        /* Thème Rouge/Orange (44P) */
+        .theme-red {
+            background: linear-gradient(135deg, white, #fff5f2);
+            border-top-color: #f97316;
+        }
+        .theme-red .control-btn.active {
+            background-color: #f97316; /* Orange */
+            border-color: #ea580c;
+        }
+
+        /* Thème Vert (47P) */
+        .theme-green {
+            background: linear-gradient(135deg, white, #f0fdf4);
+            border-top-color: #22c55e;
+        }
+        .theme-green .control-btn.active {
+            background-color: #22c55e;
+            border-color: #16a34a;
+        }
+
+
+        /* Calendar Grid */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 1rem; 
+            flex-grow: 1; 
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+             .calendar-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+             .input-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .month-calendar {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            min-width: 240px; 
+            background: white; /* Fond blanc pour les mois */
+        }
+
+        .month-header {
+            background: #f8fafc;
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .calendar-month-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #e5e7eb;
+        }
+
+        .calendar-day-header {
+            background: #374151;
+            color: white;
+            padding: 0.5rem 0.25rem;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .calendar-day {
+            background: white;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            border: none;
+            color: #1f2937;
+            font-family: inherit;
+        }
+
+        .calendar-day:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-j {
+            background: #fca5a5;
+            color: #7f1d1d;
+            font-weight: 600;
+        }
+
+        .day-n {
+            background: #a5b4fc;
+            color: #312e81;
+            font-weight: 600;
+        }
+
+        .day-repos {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+
+        /* Legend */
+        .calendar-legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-color {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 15rem;
+            background-color: #1f2937;
+            color: white;
+            text-align: left;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            position: absolute;
+            z-index: 50;
+            top: 100%; 
+            left: 50%;
+            transform: translateX(-50%); 
+            margin-top: 8px; 
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section 1: Simulateur Financier -->
+        <section id="simulateur" class="section">
+            <div class="section-header">
+                <h1 class="section-title">Nouvelle Grille - Comparateur 12h</h1>
+                <p class="section-subtitle">Chargez et comparez deux plannings côte à côte</p>
+            </div>
+            
+            <!-- Section Rémunération (partagée) -->
+            <div class="remuneration-section">
+                <h3 class="remuneration-title">
+                    <span>💸</span>
+                    <span>Rémunération (Globale)</span>
+                </h3>
+                <div class="input-group">
+                    <div class="form-group">
+                        <label for="base-treatment" class="form-label">Traitement de base (€)</label>
+                        <input type="number" id="base-treatment" value="2180.44" step="0.01" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="majoration-rate" class="form-label">Taux Majoration (€/h)</label>
+                        <input type="number" id="majoration-rate" value="9.675" step="0.001" class="form-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grille de comparaison (Gauche / Droite) -->
+            <div class="comparator-grid">
+            
+                <!-- COLONNE DE GAUCHE -->
+                <div class="comparator-column" id="column-left">
+                    <h2 class="column-title">Planning 1</h2>
+                
+                    <!-- Contrôles (Gauche) -->
+                    <div class="calendar-controls">
+                        <div class="control-group" id="control-group-left">
+                            <button id="btn-39p-left" class="control-btn" data-side="left" data-planning="39P">Ancienne grille 2022</button>
+                            <button id="btn-44p-left" class="control-btn" data-side="left" data-planning="44P">Nouvelle grille 44 lignes</button>
+                            <button id="btn-47p-left" class="control-btn" data-side="left" data-planning="47P">Nouvelle grille 47 lignes</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Grille (Gauche) -->
+                    <div class="stats-grid-2col">
+                        <!-- Carte de détails (Gauche) -->
+                        <div id="card-left" class="planning-card">
+                            <div class="planning-card-content">
+                                <div class="salary-line">
+                                    <span class="planning-subtitle">
+                                        Sal. Brut Mens. Estimé
+                                        <div class="tooltip" style="display: inline-block; margin-left: 0.5rem;">
+                                            <span style="color: #9ca3af; cursor: help;">ℹ️</span>
+                                            <span class="tooltiptext" style="width: 15rem; margin-left: -7.5rem;">Estimation du brut mensuel (Base + Majorations). N'inclut pas les primes (assiduité, SUFA/COFA, etc.) ni les IDT.</span>
+                                        </div>
+                                    </span>
+                                    <span id="result-left" class="salary-amount">0,00 €</span>
+                                </div>
+                                
+                                <div class="majorations-details">
+                                    <h5 class="majorations-title">Détail majorations (total/an)</h5>
+                                    <div class="majoration-line">
+                                        <span>🌙 Nuit:</span>
+                                        <span class="majoration-value"><span id="details-night-hours-left">0</span>h (+<span id="details-night-pay-left">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>🗓️ Dimanche:</span>
+                                        <span class="majoration-value"><span id="details-sunday-hours-left">0</span>h (+<span id="details-sunday-pay-left">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>🎉 Férié:</span>
+                                        <span class="majoration-value"><span id="details-holiday-hours-left">0</span>h (+<span id="details-holiday-pay-left">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>✨ H. majorées (+25%):</span>
+                                        <span class="majoration-value"><span id="details-overtime40-hours-left">0</span>h (+<span id="details-overtime40-pay-left">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>⏰ Heures sup. (+25%):</span>
+                                        <span class="majoration-value"><span id="details-overtime25-hours-left">0</span>h (+<span id="details-overtime25-pay-left">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>⚡ Heures sup. (+50%):</span>
+                                        <span class="majoration-value"><span id="details-overtime50-hours-left">0</span>h (+<span id="details-overtime50-pay-left">0.00</span>€)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carte d'analyse des repos (Gauche) -->
+                        <div id="rest-analysis-card-left" class="planning-card">
+                            <div class="planning-card-content">
+                                <div id="rest-analysis-details-left" class="majorations-details" style="border-top: none; padding-top: 0;">
+                                    <h5 class="majorations-title">Analyse des Repos</h5>
+                                    <div id="rest-analysis-content-left" style="font-size: 0.9rem; color: #6b7280;">
+                                        <!-- Le contenu sera généré par JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Planning (Gauche) -->
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <h3 class="calendar-title">
+                                <span>📅</span>
+                                <span>Planning Annuel Interactif</span>
+                            </h3>
+                            <div class="hours-display">
+                                <p class="hours-text">⏱️ Total Heures: <span id="total-hours-display-left">0</span> / 1501h</p>
+                                <div class="progress-container">
+                                    <div id="hours-progress-bar-left" class="progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="annual-calendar-container-left" class="calendar-grid"></div>
+                    </div>
+                </div>
+                
+                <!-- COLONNE DE DROITE -->
+                <div class="comparator-column" id="column-right">
+                    <h2 class="column-title">Planning 2</h2>
+                
+                    <!-- Contrôles (Droite) -->
+                    <div class="calendar-controls">
+                        <div class="control-group" id="control-group-right">
+                            <button id="btn-39p-right" class="control-btn" data-side="right" data-planning="39P">Ancienne grille 2022</button>
+                            <button id="btn-44p-right" class="control-btn" data-side="right" data-planning="44P">Nouvelle grille 44 lignes</button>
+                            <button id="btn-47p-right" class="control-btn" data-side="right" data-planning="47P">Nouvelle grille 47 lignes</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Grille (Droite) -->
+                    <div class="stats-grid-2col">
+                        <!-- Carte de détails (Droite) -->
+                        <div id="card-right" class="planning-card">
+                             <div class="planning-card-content">
+                                <div class="salary-line">
+                                    <span class="planning-subtitle">
+                                        Sal. Brut Mens. Estimé
+                                        <div class="tooltip" style="display: inline-block; margin-left: 0.5rem;">
+                                            <span style="color: #9ca3af; cursor: help;">ℹ️</span>
+                                            <span class="tooltiptext" style="width: 15rem; margin-left: -7.5rem;">Estimation du brut mensuel (Base + Majorations). N'inclut pas les primes (assiduité, SUFA/COFA, etc.) ni les IDT.</span>
+                                        </div>
+                                    </span>
+                                    <span id="result-right" class="salary-amount">0,00 €</span>
+                                </div>
+                                
+                                <div class="majorations-details">
+                                    <h5 class="majorations-title">Détail majorations (total/an)</h5>
+                                    <div class="majoration-line">
+                                        <span>🌙 Nuit:</span>
+                                        <span class="majoration-value"><span id="details-night-hours-right">0</span>h (+<span id="details-night-pay-right">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>🗓️ Dimanche:</span>
+                                        <span class="majoration-value"><span id="details-sunday-hours-right">0</span>h (+<span id="details-sunday-pay-right">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>🎉 Férié:</span>
+                                        <span class="majoration-value"><span id="details-holiday-hours-right">0</span>h (+<span id="details-holiday-pay-right">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>✨ H. majorées (+25%):</span>
+                                        <span class="majoration-value"><span id="details-overtime40-hours-right">0</span>h (+<span id="details-overtime40-pay-right">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>⏰ Heures sup. (+25%):</span>
+                                        <span class="majoration-value"><span id="details-overtime25-hours-right">0</span>h (+<pre-line>                                        <span id="details-overtime25-pay-right">0.00</span>€)</span>
+                                    </div>
+                                    <div class="majoration-line">
+                                        <span>⚡ Heures sup. (+50%):</span>
+                                        <span class="majoration-value"><span id="details-overtime50-hours-right">0</span>h (+<span id="details-overtime50-pay-right">0.00</span>€)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Carte d'analyse des repos (Droite) -->
+                        <div id="rest-analysis-card-right" class="planning-card">
+                             <div class="planning-card-content">
+                                <div id="rest-analysis-details-right" class="majorations-details" style="border-top: none; padding-top: 0;">
+                                    <h5 class="majorations-title">Analyse des Repos</h5>
+                                    <div id="rest-analysis-content-right" style="font-size: 0.9rem; color: #6b7280;">
+                                        <!-- Le contenu sera généré par JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Planning (Droite) -->
+                    <div class="calendar-section">
+                        <div class="calendar-header">
+                            <h3 class="calendar-title">
+                                <span>📅</span>
+                                <span>Planning Annuel Interactif</span>
+                            </h3>
+                            <div class="hours-display">
+                                <p class="hours-text">⏱️ Total Heures: <span id="total-hours-display-right">0</span> / 1501h</p>
+                                <div class="progress-container">
+                                    <div id="hours-progress-bar-right" class="progress-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="annual-calendar-container-right" class="calendar-grid"></div>
+                    </div>
+                </div>
+            
+            </div> <!-- Fin de .comparator-grid -->
+            
+            <!-- Légende (partagée) -->
+            <div class="calendar-legend">
+                <div class="legend-item">
+                    <div class="legend-color day-j"></div>
+                    <span>Jour (J)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color day-n"></div>
+                    <span>Nuit (N)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color day-repos"></div>
+                    <span>Repos</span>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- DÉFINITION DES PLANNINGS DE BASE ---
+            const scheduleData = {
+                '39P': {
+                    '2025-04-03': 'J', '2025-04-04': 'J', '2025-04-05': 'N', '2025-04-09': 'J', '2025-04-10': 'J', '2025-04-11': 'N', '2025-04-15': 'J', '2025-04-16': 'N', '2025-04-17': 'N', '2025-04-21': 'N', '2025-04-22': 'N', '2025-04-27': 'J', '2025-04-28': 'J',
+                    '2025-05-02': 'J', '2025-05-03': 'N', '2025-05-07': 'J', '2025-05-08': 'J', '2025-05-09': 'J', '2025-05-13': 'J', '2025-05-14': 'J', '2025-05-17': 'J', '2025-05-18': 'N', '2025-05-23': 'J', '2025-05-24': 'J', '2025-05-25': 'J', '2025-05-28': 'J', '2025-05-29': 'J', '2025-05-30': 'N',
+                    '2025-06-03': 'J', '2025-06-04': 'N', '2025-06-05': 'N', '2025-06-09': 'J', '2025-06-10': 'N', '2025-06-15': 'J', '2025-06-16': 'J', '2025-06-20': 'J', '2025-06-21': 'N', '2025-06-25': 'J', '2025-06-26': 'J', '2025-06-27': 'N',
+                    '2025-07-01': 'J', '2025-07-02': 'J', '2025-07-05': 'J', '2025-07-06': 'N', '2025-07-07': 'N', '2025-07-12': 'J', '2025-07-13': 'J', '2025-07-16': 'J', '2025-07-17': 'J', '2025-07-18': 'J', '2025-07-22': 'J', '2025-07-23': 'J', '2025-07-24': 'N', '2025-07-28': 'J', '2025-07-29': 'N',
+                    '2025-08-03': 'J', '2025-08-04': 'J', '2025-08-07': 'J', '2025-08-08': 'J', '2025-08-12': 'J', '2025-08-13': 'N', '2025-08-14': 'N', '2025-08-19': 'J', '2025-08-20': 'J', '2025-08-23': 'J', '2025-08-24': 'N', '2025-08-25': 'N', '2025-08-30': 'J', '2025-08-31': 'N',
+                    '2025-09-01': 'N', '2025-09-05': 'J', '2025-09-06': 'J', '2025-09-09': 'J', '2025-09-10': 'N', '2025-09-11': 'N', '2025-09-15': 'J', '2025-09-16': 'N', '2025-09-17': 'N', '2025-09-25': 'J', '2025-09-26': 'J', '2025-09-27': 'N',
+                    '2025-10-01': 'J', '2025-10-02': 'J', '2025-10-05': 'J', '2025-10-06': 'J', '2025-10-07': 'J', '2025-10-11': 'J', '2025-10-12': 'N', '2025-10-13': 'N', '2025-10-18': 'J', '2025-10-19': 'J', '2025-10-22': 'J', '2025-10-23': 'J', '2025-10-24': 'N', '2025-10-28': 'J', '2025-10-29': 'N', '2025-10-30': 'N',
+                    '2025-11-03': 'J', '2025-11-04': 'N', '2025-11-09': 'J', '2025-11-10': 'J', '2025-11-14': 'J', '2025-11-15': 'N', '2025-11-16': 'N', '2025-11-20': 'J', '2025-11-21': 'J', '2025-11-22': 'N', '2025-11-26': 'J', '2025-11-27': 'J', '2025-11-28': 'N',
+                    '2025-12-02': 'J', '2025-12-03': 'J', '2025-12-04': 'J', '2025-12-08': 'J', '2025-12-09': 'N', '2025-12-14': 'J', '2025-12-15': 'N', '2025-12-20': 'J', '2025-12-21': 'J', '2025-12-24': 'J', '2025-12-25': 'J', '2025-12-26': 'N',
+                    '2026-01-01': 'J', '2026-01-02': 'J', '2026-01-03': 'N', '2026-01-07': 'J', '2026-01-08': 'J', '2026-01-09': 'N', '2026-01-13': 'J', '2026-01-14': 'N', '2026-01-15': 'N', '2026-01-19': 'N', '2026-01-20': 'N', '2026-01-25': 'J', '2026-01-26': 'J', '2026-01-30': 'J', '2026-01-31': 'N',
+                    '2026-02-04': 'J', '2026-02-05': 'J', '2026-02-06': 'J', '2026-02-10': 'J', '2026-02-11': 'J', '2026-02-14': 'J', '2026-02-15': 'N', '2026-02-20': 'J', '2026-02-21': 'J', '2026-02-22': 'J', '2026-02-25': 'J', '2026-02-26': 'J', '2026-02-27': 'N',
+                    '2026-03-03': 'J', '2026-03-04': 'N', '2026-03-05': 'N', '2026-03-09': 'J', '2026-03-10': 'N', '2026-03-15': 'J', '2026-03-16': 'J', '2026-03-20': 'J', '2026-03-21': 'N', '2026-03-25': 'J', '2026-03-26': 'J', '2026-03-27': 'N', '2026-03-31': 'J'
+                },
+                '44P': {
+                    '2025-04-04': 'J', '2025-04-05': 'J', '2025-04-06': 'J', '2025-04-09': 'J', '2025-04-10': 'J', '2025-04-11': 'N', '2025-04-15': 'J', '2025-04-16': 'N', '2025-04-17': 'N', '2025-04-21': 'N', '2025-04-22': 'N', '2025-04-27': 'J', '2025-04-28': 'J',
+                    '2025-05-01': 'J', '2025-05-02': 'J', '2025-05-05': 'J', '2025-05-06': 'J', '2025-05-07': 'N', '2025-05-12': 'J', '2025-05-13': 'J', '2025-05-17': 'N', '2025-05-18': 'N', '2025-05-23': 'J', '2025-05-24': 'J', '2025-05-25': 'J', '2025-05-28': 'J', '2025-05-29': 'J', '2025-05-30': 'N',
+                    '2025-06-03': 'J', '2025-06-04': 'J', '2025-06-05': 'N', '2025-06-09': 'J', '2025-06-10': 'N', '2025-06-15': 'J', '2025-06-16': 'N', '2025-06-21': 'J', '2025-06-22': 'J', '2025-06-25': 'J', '2025-06-26': 'J', '2025-06-27': 'N',
+                    '2025-07-01': 'J', '2025-07-02': 'J', '2025-07-05': 'J', '2025-07-06': 'N', '2025-07-07': 'N', '2025-07-12': 'J', '2025-07-13': 'J', '2025-07-16': 'J', '2025-07-17': 'J', '2025-07-18': 'J', '2025-07-22': 'J', '2025-07-23': 'J', '2025-07-27': 'J', '2025-07-28': 'N', '2025-07-29': 'N',
+                    '2025-08-03': 'J', '2025-08-04': 'J', '2025-08-07': 'J', '2025-08-08': 'J', '2025-08-11': 'J', '2025-08-12': 'J', '2025-08-13': 'N', '2025-08-19': 'J', '2025-08-20': 'J', '2025-08-21': 'N', '2025-08-25': 'J', '2025-08-26': 'J', '2025-08-30': 'N', '2025-08-31': 'N',
+                    '2025-09-04': 'J', '2025-09-05': 'J', '2025-09-06': 'N', '2025-09-09': 'J', '2025-09-10': 'J', '2025-09-11': 'N', '2025-09-17': 'J', '2025-09-18': 'J', '2025-09-19': 'N', '2025-09-25': 'J', '2025-09-26': 'J', '2025-09-27': 'N',
+                    '2025-10-01': 'J', '2025-10-02': 'J', '2025-10-05': 'J', '2025-10-06': 'J', '2025-10-07': 'N', '2025-10-11': 'J', '2025-10-12': 'N', '2025-10-13': 'N', '2025-10-18': 'J', '2025-10-19': 'J', '2025-10-22': 'J', '2025-10-23': 'J', '2025-10-24': 'N', '2025-10-28': 'J', '2025-10-29': 'J', '2025-10-30': 'N',
+                    '2025-11-03': 'J', '2025-11-04': 'N', '2025-11-09': 'J', '2025-11-10': 'J', '2025-11-14': 'J', '2025-11-15': 'J', '2025-11-16': 'N', '2025-11-20': 'J', '2025-11-21': 'J', '2025-11-22': 'N', '2025-11-26': 'J', '2025-11-27': 'J', '2025-11-28': 'N',
+                    '2025-12-02': 'J', '2025-12-03': 'J', '2025-12-07': 'J', '2025-12-08': 'J', '2025-12-09': 'N', '2025-12-13': 'J', '2025-12-14': 'N', '2025-12-15': 'N', '2025-12-20': 'J', '2025-12-21': 'J', '2025-12-24': 'J', '2025-12-25': 'J', '2025-12-26': 'J',
+                    '2026-01-01': 'J', '2026-01-02': 'J', '2026-01-03': 'N', '2026-01-07': 'J', '2026-01-08': 'J', '2026-01-09': 'N', '2026-01-13': 'J', '2026-01-14': 'N', '2026-01-15': 'N', '2026-01-19': 'J', '2026-01-20': 'J', '2026-01-21': 'N', '2026-01-30': 'J', '2026-01-31': 'J',
+                    '2026-02-01': 'J', '2026-02-06': 'J', '2026-02-07': 'J', '2026-02-08': 'J', '2026-02-11': 'J', '2026-02-12': 'J', '2026-02-13': 'N', '2026-02-17': 'J', '2026-02-18': 'N', '2026-02-19': 'N', '2026-02-23': 'N', '2026-02-24': 'N',
+                    '2026-03-01': 'J', '2026-03-02': 'J', '2026-03-05': 'J', '2026-03-06': 'J', '2026-03-09': 'J', '2026-03-10': 'J', '2026-03-11': 'N', '2026-03-16': 'J', '2026-03-17': 'J', '2026-03-21': 'N', '2026-03-22': 'N', '2026-03-27': 'J', '2026-03-28': 'J', '2026-03-29': 'J'
+                },
+                '47P': {
+                    '2025-04-04': 'J', '2025-04-05': 'J', '2025-04-06': 'J', '2025-04-09': 'J', '2025-04-10': 'J', '2025-04-11': 'N', '2025-04-15': 'J', '2025-04-16': 'N', '2025-04-17': 'N', '2025-04-21': 'N', '2025-04-22': 'N', '2025-04-27': 'J', '2025-04-28': 'J',
+                    '2025-05-01': 'J', '2025-05-02': 'J', '2025-05-05': 'J', '2025-05-06': 'J', '2025-05-07': 'N', '2025-05-12': 'J', '2025-05-13': 'J', '2025-05-17': 'N', '2025-05-18': 'N', '2025-05-23': 'J', '2025-05-24': 'J', '2025-05-25': 'J', '2025-05-28': 'J', '2025-05-29': 'J', '2025-05-30': 'N',
+                    '2025-06-03': 'J', '2025-06-04': 'J', '2025-06-05': 'N', '2025-06-09': 'J', '2025-06-10': 'N', '2025-06-15': 'J', '2025-06-16': 'N', '2025-06-21': 'J', '2025-06-22': 'J', '2025-06-25': 'J', '2025-06-26': 'J', '2025-06-27': 'N',
+                    '2025-07-01': 'J', '2025-07-02': 'J', '2025-07-05': 'J', '2025-07-06': 'N', '2025-07-07': 'N', '2025-07-12': 'J', '2025-07-13': 'J', '2025-07-16': 'J', '2025-07-17': 'J', '2025-07-18': 'N', '2025-07-22': 'J', '2025-07-23': 'J', '2025-07-27': 'J', '2025-07-28': 'N', '2025-07-29': 'N',
+                    '2025-08-03': 'J', '2025-08-04': 'J', '2025-08-07': 'J', '2025-08-08': 'J', '2025-08-11': 'J', '2025-08-12': 'J', '2025-08-13': 'N', '2025-08-19': 'J', '2025-08-20': 'J', '2025-08-21': 'N', '2025-08-25': 'J', '2025-08-26': 'J', '2025-08-30': 'N', '2025-08-31': 'N',
+                    '2025-09-04': 'J', '2025-09-05': 'J', '2025-09-06': 'N', '2025-09-09': 'J', '2025-09-10': 'J', '2025-09-11': 'N', '2025-09-15': 'J', '2025-09-16': 'J', '2025-09-17': 'N', '2025-09-25': 'J', '2025-09-26': 'J', '2025-09-27': 'N',
+                    '2025-10-01': 'J', '2025-10-02': 'J', '2025-10-03': 'J', '2025-10-06': 'J', '2025-10-07': 'N', '2025-10-11': 'J', '2025-10-12': 'N', '2025-10-13': 'N', '2025-10-18': 'J', '2025-10-19': 'J', '2025-10-22': 'J', '2025-10-23': 'J', '2025-10-24': 'N', '2025-10-28': 'J', '2025-10-29': 'J', '2025-10-30': 'N',
+                    '2025-11-03': 'J', '2025-11-04': 'N', '2025-11-09': 'J', '2025-11-10': 'J', '2025-11-14': 'J', '2025-11-15': 'J', '2025-11-16': 'N', '2025-11-20': 'J', '2025-11-21': 'J', '2025-11-22': 'N', '2025-11-26': 'J', '2025-11-27': 'J', '2025-11-28': 'N',
+                    '2025-12-02': 'J', '2025-12-03': 'J', '2025-12-07': 'J', '2025-12-08': 'J', '2025-12-09': 'N', '2025-12-13': 'J', '2025-12-14': 'N', '2025-12-15': 'N', '2025-12-20': 'J', '2025-12-21': 'J', '2025-12-24': 'J', '2025-12-25': 'J', '2025-12-26': 'J',
+                    '2026-01-01': 'J', '2026-01-02': 'J', '2026-01-03': 'N', '2026-01-07': 'J', '2026-01-08': 'J', '2026-01-09': 'N', '2026-01-13': 'J', '2026-01-14': 'N', '2026-01-15': 'N', '2026-01-19': 'J', '2026-01-20': 'J', '2026-01-21': 'N', '2026-01-26': 'J', '2026-01-27': 'J', '2026-01-28': 'N',
+                    '2026-02-02': 'N', '2026-02-03': 'N', '2026-02-07': 'J', '2026-02-08': 'N', '2026-02-11': 'J', '2026-02-12': 'J', '2026-02-13': 'N', '2026-02-17': 'J', '2026-02-18': 'J', '2026-02-19': 'N', '2026-02-27': 'J', '2026-02-28': 'J',
+                    '2026-03-01': 'J', '2026-03-04': 'J', '2026-03-05': 'J', '2026-03-06': 'N', '2026-03-10': 'J', '2026-03-11': 'N', '2026-03-12': 'N', '2026-03-16': 'N', '2026-03-17': 'N', '2026-03-22': 'J', '2026-03-23': 'J', '2026-03-26': 'J', '2026-03-27': 'J', '2026-03-30': 'J', '2026-03-31': 'J'
+                }
+            };
+            
+            // --- VARIABLES GLOBALES ---
+            // Objets pour stocker l'état de chaque côté
+            const states = {
+                left: {
+                    schedule: {},
+                    elements: {
+                        controlGroup: document.getElementById('control-group-left'),
+                        result: document.getElementById('result-left'),
+                        details: {
+                            nightHours: document.getElementById('details-night-hours-left'),
+                            nightPay: document.getElementById('details-night-pay-left'),
+                            sundayHours: document.getElementById('details-sunday-hours-left'),
+                            sundayPay: document.getElementById('details-sunday-pay-left'),
+                            holidayHours: document.getElementById('details-holiday-hours-left'),
+                            holidayPay: document.getElementById('details-holiday-pay-left'),
+                            overtime40Hours: document.getElementById('details-overtime40-hours-left'),
+                            overtime40Pay: document.getElementById('details-overtime40-pay-left'),
+                            overtime25Hours: document.getElementById('details-overtime25-hours-left'),
+                            overtime25Pay: document.getElementById('details-overtime25-pay-left'),
+                            overtime50Hours: document.getElementById('details-overtime50-hours-left'),
+                            overtime50Pay: document.getElementById('details-overtime50-pay-left')
+                        },
+                        restAnalysis: document.getElementById('rest-analysis-content-left'),
+                        totalHours: document.getElementById('total-hours-display-left'),
+                        progressBar: document.getElementById('hours-progress-bar-left'),
+                        calendarContainer: document.getElementById('annual-calendar-container-left'),
+                        column: document.getElementById('column-left') // Ajout de la colonne
+                    }
+                },
+                right: {
+                    schedule: {},
+                    elements: {
+                        controlGroup: document.getElementById('control-group-right'),
+                        result: document.getElementById('result-right'),
+                        details: {
+                            nightHours: document.getElementById('details-night-hours-right'),
+                            nightPay: document.getElementById('details-night-pay-right'),
+                            sundayHours: document.getElementById('details-sunday-hours-right'),
+                            sundayPay: document.getElementById('details-sunday-pay-right'),
+                            holidayHours: document.getElementById('details-holiday-hours-right'),
+                            holidayPay: document.getElementById('details-holiday-pay-right'),
+                            overtime40Hours: document.getElementById('details-overtime40-hours-right'),
+                            overtime40Pay: document.getElementById('details-overtime40-pay-right'),
+                            overtime25Hours: document.getElementById('details-overtime25-hours-right'),
+                            overtime25Pay: document.getElementById('details-overtime25-pay-right'),
+                            overtime50Hours: document.getElementById('details-overtime50-hours-right'),
+                            overtime50Pay: document.getElementById('details-overtime50-pay-right')
+                        },
+                        restAnalysis: document.getElementById('rest-analysis-content-right'),
+                        totalHours: document.getElementById('total-hours-display-right'),
+                        progressBar: document.getElementById('hours-progress-bar-right'),
+                        calendarContainer: document.getElementById('annual-calendar-container-right'),
+                        column: document.getElementById('column-right') // Ajout de la colonne
+                    }
+                }
+            };
+
+            const baseTreatmentInput = document.getElementById('base-treatment');
+            const majorationRateInput = document.getElementById('majoration-rate');
+
+            const PUBLIC_HOLIDAYS_2025 = new Set(['2025-01-01', '2025-04-21', '2025-05-01', '2025-05-08', '2025-05-29', '2025-06-09', '2025-07-14', '2025-08-15', '2025-11-01', '2025-11-11', '2025-12-25']);
+            const PUBLIC_HOLIDAYS_2026 = new Set(['2026-01-01', '2026-04-06', '2026-05-01', '2026-05-08', '2026-05-14', '2026-05-25']);
+            
+            const monthNames = ["Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre", "Janvier", "Février", "Mars"];
+
+            // --- FONCTIONS DE CALCUL (PARTAGÉES) ---
+            
+            function calculateAllMajorations(schedule, shiftDuration) {
+                const weeklyHours = {};
+                const monthlyTotals = {};
+                let totalHours = 0;
+
+                function getWeekStart(date) {
+                    const d = new Date(date);
+                    const day = d.getDay();
+                    const diff = d.getDate() - day + (day === 0 ? -6 : 1);
+                    d.setDate(diff);
+                    d.setHours(0, 0, 0, 0);
+                    return d;
+                }
+                
+                for (const dateString in schedule) {
+                    const shiftType = schedule[dateString];
+                    const startTime = (shiftType === 'N') ? 18 : 6;
+                    const shiftStartDate = new Date(dateString);
+                    shiftStartDate.setHours(startTime, 0, 0, 0);
+
+                    if (isNaN(shiftStartDate.getTime())) {
+                        console.error("Date invalide détectée :", dateString);
+                        continue;
+                    }
+
+                    for (let h = 0; h < shiftDuration; h++) {
+                        const hour = new Date(shiftStartDate.getTime() + h * 3600000);
+                        totalHours++;
+                        
+                        const weekStart = getWeekStart(hour);
+                        const weekKey = `${weekStart.getFullYear()}-${weekStart.getMonth() + 1}-${weekStart.getDate()}`;
+                        const monthKeyForWeek = hour.toISOString().substring(0, 7);
+                        if (!weeklyHours[weekKey]) weeklyHours[weekKey] = { hours: 0, byMonth: {} };
+                        weeklyHours[weekKey].hours++;
+                        if(!weeklyHours[weekKey].byMonth[monthKeyForWeek]) weeklyHours[weekKey].byMonth[monthKeyForWeek] = 0;
+                        weeklyHours[weekKey].byMonth[monthKeyForWeek]++;
+
+                        const monthKey = `${hour.getFullYear()}-${String(hour.getMonth() + 1).padStart(2, '0')}`;
+                        if (!monthlyTotals[monthKey]) {
+                           monthlyTotals[monthKey] = { nightHours: 0, sundayHours: 0, holidayHours: 0, totalHours: 0, overtime40: 0, overtime25: 0, overtime50: 0 };
+                        }
+                        monthlyTotals[monthKey].totalHours++;
+                        
+                        const y = hour.getFullYear();
+                        const m = String(hour.getMonth() + 1).padStart(2, '0');
+                        const d = String(hour.getDate()).padStart(2, '0');
+                        const currentHourDateString = `${y}-${m}-${d}`;
+
+                        // MODIFICATION : Calcul des fériés désactivé
+                        // const isCurrentHourHoliday = PUBLIC_HOLIDAYS_2025.has(currentHourDateString) || PUBLIC_HOLIDAYS_2026.has(currentHourDateString);
+                        // if (isCurrentHourHoliday) {
+                        //     monthlyTotals[monthKey].holidayHours++;
+                        // } else 
+                        if (hour.getDay() === 0) { // Sunday
+                            monthlyTotals[monthKey].sundayHours++;
+                        } else if (hour.getHours() >= 22 || hour.getHours() < 6) { // Night
+                            monthlyTotals[monthKey].nightHours++;
+                        }
+                    }
+                }
+                
+                for (const weekKey in weeklyHours) {
+                    const hours = weeklyHours[weekKey].hours;
+                    if (hours > 39) {
+                        const monthsInWeek = Object.keys(weeklyHours[weekKey].byMonth);
+                        if (monthsInWeek.length === 0) continue;
+
+                        let targetMonth = monthsInWeek.reduce((a, b) => weeklyHours[weekKey].byMonth[a] > weeklyHours[weekKey].byMonth[b] ? a : b);
+
+                        if (monthlyTotals[targetMonth]) {
+                            if (hours > 39) {
+                                monthlyTotals[targetMonth].overtime40 += Math.min(hours - 39, 3);
+                            }
+                            if (hours > 42) {
+                                monthlyTotals[targetMonth].overtime25 += Math.min(hours - 42, 8);
+                            }
+                            if (hours > 50) {
+                                monthlyTotals[targetMonth].overtime50 += hours - 50;
+                            }
+                        }
+                    }
+                }
+                
+                const annualTotals = Object.values(monthlyTotals).reduce((acc, month) => {
+                    acc.nightHours += month.nightHours;
+                    acc.sundayHours += month.sundayHours;
+                    acc.holidayHours += month.holidayHours;
+                    acc.overtime40 += month.overtime40;
+                    acc.overtime25 += month.overtime25;
+                    acc.overtime50 += month.overtime50;
+                    return acc;
+                }, { nightHours: 0, sundayHours: 0, holidayHours: 0, overtime40: 0, overtime25: 0, overtime50: 0 });
+                
+                annualTotals.totalHours = totalHours;
+                return { annualTotals, monthlyTotals };
+            }
+
+            /**
+             * Analyse les jours de repos consécutifs dans un planning.
+             * Correction du bug de changement d'heure en utilisant UTC.
+             */
+            function analyzeRestDays(schedule) {
+                const restBlocks = {};
+                let currentRestCount = 0;
+                
+                let currentDate = new Date(Date.UTC(2025, 3, 1)); // Mois 3 = Avril
+                const endDate = new Date(Date.UTC(2026, 3, 1)); 
+
+                const oneDayInMs = 24 * 60 * 60 * 1000;
+
+                while (currentDate < endDate) {
+                    const y = currentDate.getUTCFullYear();
+                    const m = String(currentDate.getUTCMonth() + 1).padStart(2, '0');
+                    const d = String(currentDate.getUTCDate()).padStart(2, '0');
+                    const dateString = `${y}-${m}-${d}`;
+
+                    if (schedule[dateString]) {
+                        if (currentRestCount > 0) {
+                            if (!restBlocks[currentRestCount]) {
+                                restBlocks[currentRestCount] = 0;
+                            }
+                            restBlocks[currentRestCount]++;
+                        }
+                        currentRestCount = 0;
+                    } else {
+                        currentRestCount++;
+                    }
+                    currentDate = new Date(currentDate.getTime() + oneDayInMs);
+                }
+
+                if (currentRestCount > 0) {
+                    if (!restBlocks[currentRestCount]) {
+                        restBlocks[currentRestCount] = 0;
+                    }
+                    restBlocks[currentRestCount]++;
+                }
+                return restBlocks;
+            }
+
+            // --- FONCTION PRINCIPALE DE SIMULATION (POUR UN CÔTÉ) ---
+            
+            function runSimulation(side) {
+                const state = states[side];
+                const baseTreatment = parseFloat(baseTreatmentInput.value) || 0;
+                const majorationRate = parseFloat(majorationRateInput.value) || 0;
+                
+                if (baseTreatment === 0) return;
+                
+                const hourlyRate = baseTreatment / 151.67;
+
+                const { annualTotals: totals, monthlyTotals } = calculateAllMajorations(state.schedule, 12);
+                
+                const bonus = (totals.nightHours * majorationRate) 
+                                 + (totals.sundayHours * majorationRate * 0.75) 
+                                 + (totals.holidayHours * majorationRate) 
+                                 + (totals.overtime40 * hourlyRate * 0.25)
+                                 + (totals.overtime25 * hourlyRate * 0.25) 
+                                 + (totals.overtime50 * hourlyRate * 0.50);
+                
+                const totalPay = (baseTreatment * 12) + bonus;
+
+                // Mettre à jour la carte de détails
+                state.elements.result.textContent = `${(totalPay / 12).toFixed(2)} €`;
+                
+                state.elements.details.nightHours.textContent = totals.nightHours.toFixed(0);
+                state.elements.details.nightPay.textContent = (totals.nightHours * majorationRate).toFixed(2);
+                state.elements.details.sundayHours.textContent = totals.sundayHours.toFixed(0);
+                state.elements.details.sundayPay.textContent = (totals.sundayHours * majorationRate * 0.75).toFixed(2);
+                state.elements.details.holidayHours.textContent = totals.holidayHours.toFixed(0);
+                state.elements.details.holidayPay.textContent = (totals.holidayHours * majorationRate).toFixed(2);
+                state.elements.details.overtime40Hours.textContent = totals.overtime40.toFixed(0);
+                state.elements.details.overtime40Pay.textContent = (totals.overtime40 * hourlyRate * 0.25).toFixed(2);
+                state.elements.details.overtime25Hours.textContent = totals.overtime25.toFixed(0);
+                state.elements.details.overtime25Pay.textContent = (totals.overtime25 * hourlyRate * 0.25).toFixed(2);
+                state.elements.details.overtime50Hours.textContent = totals.overtime50.toFixed(0);
+                state.elements.details.overtime50Pay.textContent = (totals.overtime50 * hourlyRate * 0.50).toFixed(2);
+
+                // Mettre à jour le total d'heures
+                state.elements.totalHours.textContent = totals.totalHours.toFixed(0);
+                const progressPercentage = Math.min((totals.totalHours / 1501) * 100, 100);
+                state.elements.progressBar.style.width = `${progressPercentage}%`;
+                state.elements.progressBar.classList.toggle('over', totals.totalHours > 1501);
+
+                // Mettre à jour les tooltips des mois
+                updateMonthlyTooltips(side, monthlyTotals, majorationRate, hourlyRate);
+
+                // Mettre à jour l'analyse des repos
+                const restBlocks = analyzeRestDays(state.schedule);
+                state.elements.restAnalysis.innerHTML = ''; // Vide l'analyse précédente
+                const sortedKeys = Object.keys(restBlocks).map(Number).sort((a, b) => a - b);
+                
+                if (sortedKeys.length === 0) {
+                     state.elements.restAnalysis.innerHTML = '<p style="text-align: center;">Aucun bloc de repos trouvé.</p>';
+                } else {
+                    sortedKeys.forEach(days => {
+                        const count = restBlocks[days];
+                        state.elements.restAnalysis.innerHTML += `
+                            <div class="majoration-line">
+                                <span>${days} repos consécutifs:</span>
+                                <span class="majoration-value">${count} bloc(s)</span>
+                            </div>
+                        `;
+                    });
+                }
+            }
+            
+            // Simule les DEUX côtés (appelé qd la rémunération change)
+            function runAllSimulations() {
+                runSimulation('left');
+                runSimulation('right');
+            }
+
+            // --- FONCTIONS D'AFFICHAGE (POUR UN CÔTÉ) ---
+
+            function displayAnnualCalendar(side) {
+                const state = states[side];
+                state.elements.calendarContainer.innerHTML = '';
+                
+                for (let i = 0; i < 12; i++) {
+                    const month = (i + 3) % 12;
+                    const year = i < 9 ? 2025 : 2026;
+                    const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+                    
+                    let monthHtml = `
+                        <div class="month-calendar">
+                            <h4 class="month-header">
+                                📅 ${monthNames[i]} ${year}
+                                <div class="tooltip" style="display: inline-block; margin-left: 0.5rem;">
+                                    <span style="color: #9ca3af; cursor: help;">ℹ️</span>
+                                    <span id="tooltip-month-${monthKey}-${side}" class="tooltiptext">Calcul en cours...</span>
+                                </div>
+                            </h4>
+                            <div class="calendar-month-grid">
+                    `;
+                    
+                    ['L', 'M', 'M', 'J', 'V', 'S', 'D'].forEach(day => monthHtml += `<div class="calendar-day-header">${day}</div>`);
+                    
+                    const daysInMonth = new Date(year, month + 1, 0).getDate();
+                    const firstDayOfMonth = new Date(year, month, 1).getDay();
+                    const adjustedFirstDay = (firstDayOfMonth === 0) ? 6 : firstDayOfMonth - 1;
+                    
+                    for (let d = 0; d < adjustedFirstDay; d++) monthHtml += `<div></div>`;
+                    
+                    for (let day = 1; day <= daysInMonth; day++) {
+                        const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                        const shiftType = state.schedule[dateString] || 'Repos';
+                        
+                        let dayClass = 'day-repos', content = day;
+                        if (shiftType === 'J') { dayClass = 'day-j'; content = 'J'; }
+                        else if (shiftType === 'N') { dayClass = 'day-n'; content = 'N'; }
+                        
+                        monthHtml += `<button class="calendar-day ${dayClass}" data-date="${dateString}" data-side="${side}">${content}</button>`;
+                    }
+                    
+                    monthHtml += `</div></div>`;
+                    state.elements.calendarContainer.innerHTML += monthHtml;
+                }
+            }
+            
+            function updateMonthlyTooltips(side, monthlyTotals, majorationRate, hourlyRate) {
+                for (let i = 0; i < 12; i++) {
+                    const month = (i + 3) % 12;
+                    const year = i < 9 ? 2025 : 2026;
+                    const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+                    
+                    const tooltipElement = document.getElementById(`tooltip-month-${monthKey}-${side}`);
+                    if (!tooltipElement) continue;
+
+                    const monthData = monthlyTotals[monthKey] || { nightHours: 0, sundayHours: 0, holidayHours: 0, overtime40: 0, overtime25: 0, overtime50: 0, totalHours: 0 };
+                    
+                    const pay = {
+                        night: monthData.nightHours * majorationRate,
+                        sunday: monthData.sundayHours * majorationRate * 0.75,
+                        holiday: monthData.holidayHours * majorationRate,
+                        overtime40: monthData.overtime40 * hourlyRate * 0.25,
+                        overtime25: monthData.overtime25 * hourlyRate * 0.25,
+                        overtime50: monthData.overtime50 * hourlyRate * 0.50,
+                    };
+                    const totalPay = pay.night + pay.sunday + pay.holiday + pay.overtime40 + pay.overtime25 + pay.overtime50;
+
+                    tooltipElement.innerHTML = `
+                        <div style="font-weight: 700; font-size: 0.9rem; color: white; margin-bottom: 0.5rem;">💰 Bonus estimé: +${totalPay.toFixed(2)}€</div>
+                        <div style="font-size: 0.75rem; color: #d1d5db;">
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>⏱️ H. trav:</span> <span style="font-weight: 500; color: white;">${monthData.totalHours.toFixed(0)}h</span></p>
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>🌙 Nuit:</span> <span style="font-weight: 500; color: white;">${monthData.nightHours.toFixed(0)}h (+${pay.night.toFixed(2)}€)</span></p>
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>🗓️ Dimanche:</span> <span style="font-weight: 500; color: white;">${monthData.sundayHours.toFixed(0)}h (+${pay.sunday.toFixed(2)}€)</span></p>
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>🎉 Férié:</span> <span style="font-weight: 500; color: white;">${monthData.holidayHours.toFixed(0)}h (+${pay.holiday.toFixed(2)}€)</span></p>
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>✨ H. maj:+25%:</span> <span style="font-weight: 500; color: white;">${monthData.overtime40.toFixed(0)}h (+${pay.overtime40.toFixed(2)}€)</span></p>
+                            <p style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;"><span>⏰ Sup.+25%:</span> <span style="font-weight: 500; color: white;">${monthData.overtime25.toFixed(0)}h (+${pay.overtime25.toFixed(2)}€)</span></p>
+                            <p style="display: flex; justify-content: space-between;"><span>⚡ Sup.+50%:</span> <span style="font-weight: 500; color: white;">${monthData.overtime50.toFixed(0)}h (+${pay.overtime50.toFixed(2)}€)</span></p>
+                        </div>
+                    `;
+                }
+            }
+
+            // --- GESTION DES ÉVÉNEMENTS ---
+
+            // Chargement d'un planning (pour un côté)
+            function loadSchedule(side, scheduleName) {
+                const state = states[side];
+                // Copie l'objet pour permettre l'édition sans altérer l'original
+                state.schedule = { ...scheduleData[scheduleName] }; 
+                
+                // Met à jour l'état actif des boutons pour ce côté
+                state.elements.controlGroup.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+                
+                const activeButton = state.elements.controlGroup.querySelector(`[data-planning="${scheduleName}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                } else {
+                    console.error(`Bouton non trouvé pour: ${side}, ${scheduleName}`);
+                }
+                
+                // --- NOUVEAU : Gère les thèmes de couleur ---
+                const column = state.elements.column;
+                column.classList.remove('theme-blue', 'theme-red', 'theme-green');
+                if (scheduleName === '39P') {
+                    column.classList.add('theme-blue');
+                } else if (scheduleName === '44P') {
+                    column.classList.add('theme-red');
+                } else if (scheduleName === '47P') {
+                    column.classList.add('theme-green');
+                }
+                // --- FIN NOUVEAU ---
+
+                displayAnnualCalendar(side);
+                runSimulation(side);
+            }
+            
+            // Attache les écouteurs aux boutons
+            document.querySelectorAll('.control-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const side = e.target.dataset.side;
+                    const planning = e.target.dataset.planning;
+                    loadSchedule(side, planning);
+                });
+            });
+
+
+            // Modification manuelle du calendrier (délégué au conteneur principal)
+            document.getElementById('simulateur').addEventListener('click', (e) => {
+                if (e.target.matches('.calendar-day')) {
+                    const side = e.target.dataset.side;
+                    const date = e.target.dataset.date;
+                    const state = states[side];
+                    const current = state.schedule[date];
+                    
+                    if (!current) {
+                        state.schedule[date] = 'J'; // Repos -> Jour
+                    } else if (current === 'J') {
+                        state.schedule[date] = 'N'; // Jour -> Nuit
+                    } else if (current === 'N') {
+                        delete state.schedule[date]; // Nuit -> Repos
+                    }
+                    
+                    // Redessine le mois et recalcule tout (pour ce côté seulement)
+                    displayAnnualCalendar(side);
+                    runSimulation(side);
+                }
+            });
+
+            // Écouteurs pour les inputs de rémunération (met à jour les DEUX côtés)
+            baseTreatmentInput.addEventListener('input', runAllSimulations);
+            majorationRateInput.addEventListener('input', runAllSimulations);
+
+            // --- INITIALISATION ---
+            loadSchedule('left', '39P'); // Charge le 39P à gauche par défaut
+            loadSchedule('right', '47P'); // Charge le 47P à droite par défaut
+
+        });
+    </script>
+</body>
+</html>
